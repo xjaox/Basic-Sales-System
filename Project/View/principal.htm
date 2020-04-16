@@ -1,0 +1,369 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="../View/template/css/style.css">
+        <!--[if IE]>
+        <link type="text/css" rel="stylesheet" href="template/css/iehack.css">
+        <![endif]-->
+        <title>:: Fixa Soluções ::</title>
+        
+        <!-- Parte do autoComplete -->
+		<script type="text/javascript" src="../View/lib/jquery.js"></script>
+        <script type='text/javascript' src='../View/jquery.autocomplete.js'></script>
+        
+        <link rel="stylesheet" type="text/css" href="../View/jquery.autocomplete.css" />
+        
+        
+        <script type="application/javascript">
+        
+        var cities, citiesPhp, i;
+            
+            citiesPhp = "{vetorCities}";
+            cities = citiesPhp.split("|");
+        </script>
+        
+        <script type="text/javascript">
+        $().ready(function() {
+        
+            function log(event, data, formatted) {
+                $("<li>").html( !data ? "No match!" : "Selected: " + formatted).appendTo("#result");
+            }
+            
+            function formatItem(row) {
+                return row[0] + " (<strong>id: " + row[1] + "</strong>)";
+            }
+            function formatResult(row) {
+                return row[0].replace(/(<.+?>)/gi, '');
+            }
+            
+            $("#suggest1").focus().autocomplete(cities);
+            
+            
+            
+            $(":text, textarea").result(log).next().click(function() {
+                $(this).prev().search();
+            });
+            $("#singleBirdRemote").result(function(event, data, formatted) {
+                if (data)
+                    $(this).parent().next().find("input").val(data[1]);
+            });
+            
+          
+            $("#scrollChange").click(changeScrollHeight);
+            
+            $("#clear").click(function() {
+                $(":input").unautocomplete();
+            });
+        });
+        
+        function changeOptions(){
+            var max = parseInt(window.prompt('Please type number of items to display:', jQuery.Autocompleter.defaults.max));
+            if (max > 0) {
+                $("#suggest1").setOptions({
+                    max: max
+                });
+            }
+        }
+        
+        function changeScrollHeight() {
+            var h = parseInt(window.prompt('Please type new scroll height (number in pixels):', jQuery.Autocompleter.defaults.scrollHeight));
+            if(h > 0) {
+                $("#suggest1").setOptions({
+                    scrollHeight: h
+                });
+            }
+        }
+        
+        function changeToMonths(){
+            $("#suggest1")
+                // clear existing data
+                .val("")
+                // change the local data to months
+                .setOptions({data: months})
+                // get the label tag
+                .prev()
+                // update the label tag
+                .text("Month (local):");
+        }
+        
+        </script>
+        
+        <script type="application/javascript">
+        
+        var citiess, citiesPhpp, i;
+            
+            citiesPhpp = "{vetorCitiess}";
+            citiess = citiesPhpp.split("|");
+        </script>
+        
+        <script type="text/javascript">
+        $().ready(function() {
+        
+            function log(event, data, formatted) {
+                $("<li>").html( !data ? "No match!" : "Selected: " + formatted).appendTo("#result");
+            }
+            
+            function formatItem(row) {
+                return row[0] + " (<strong>id: " + row[1] + "</strong>)";
+            }
+            function formatResult(row) {
+                return row[0].replace(/(<.+?>)/gi, '');
+            }
+            
+            $("#suggest2").focus().autocomplete(citiess);
+            
+            
+            
+            $(":text, textarea").result(log).next().click(function() {
+                $(this).prev().search();
+            });
+            $("#singleBirdRemote").result(function(event, data, formatted) {
+                if (data)
+                    $(this).parent().next().find("input").val(data[1]);
+            });
+            
+          
+            $("#scrollChange").click(changeScrollHeight);
+            
+            $("#clear").click(function() {
+                $(":input").unautocomplete();
+            });
+        });
+        
+        function changeOptions(){
+            var max = parseInt(window.prompt('Please type number of items to display:', jQuery.Autocompleter.defaults.max));
+            if (max > 0) {
+                $("#suggest2").setOptions({
+                    max: max
+                });
+            }
+        }
+        
+        function changeScrollHeight() {
+            var h = parseInt(window.prompt('Please type new scroll height (number in pixels):', jQuery.Autocompleter.defaults.scrollHeight));
+            if(h > 0) {
+                $("#suggest2").setOptions({
+                    scrollHeight: h
+                });
+            }
+        }
+        
+        function changeToMonths(){
+            $("#suggest2")
+                // clear existing data
+                .val("")
+                // change the local data to months
+                .setOptions({data: months})
+                // get the label tag
+                .prev()
+                // update the label tag
+                .text("Month (local):");
+        }
+        
+        </script>
+        
+    </head>
+    <body>
+        <div id="topo">
+            <div class="page">
+                <a href="?page=home"><img src="../View/template/img/logo.png" id="logo"></a>
+                <ul id="menu_admin">
+                   
+                </ul>
+            </div>
+        </div>
+        <div class="bemvindo">
+            <div class="page"><div style="float:left; padding-top: 6px;"><b>{nomeLogin}</b> | {horaAtual}</div>
+                <ul class="opcoes">
+                    <li><a href=""><img src="../View/template/img/opcoes.png" alt="Opções">Opções <img src="../View/template/img/seta2.png" alt="Opções"></a>
+                        <ul>
+                            <li><a href="{configConta}"><img src="../View/template/img/perfil.png" alt="Perfil">Config</a></li>
+                            <li><a href="{suporte}"><img src="../View/template/img/suporte.png" alt="Suporte">Suporte</a></li>
+                            <li><a href="{sair}"><img src="../View/template/img/sair.png" alt="Sair">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div id="page">
+            <div id="left">
+                <ul id="menu_left">
+                    <li><a href="" id="active"><img src="../View/template/img/home.png" alt="Início">Início</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=vender"><img src="../View/template/img/vender.png" alt="Vender">Vendas</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=cobrar"><img src="../View/template/img/cobrar.png" alt="Cobrar">Pagamentos</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=clientes" ><img src="../View/template/img/clientes.png" alt="Início">Clientes</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=funcionarios"><img src="../View/template/img/funcionarios.png" alt="Funcionários">Funcionários</a></li>
+                    <li><a href=""><img src="../View/template/img/relatorios.png" alt="Relatórios">Relatórios <img src="../View/template/img/seta2.png" alt="Opções"></a>
+                        <ul id="clientes">
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarClientes">Clientes</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarFuncionarios">Funcionarios</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarCreditos">Creditos</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarDebitos">Debitos Totais</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarDebitosHoje">Debitos Hoje</a></li>
+                        </ul>
+                    </li>
+                </ul>
+               <p>{experira}<br>
+                    {versao}</p>
+	            <div id="anuncio">&nbsp;</div>
+            </div>
+            
+            <div id="geral">
+                <div class="local">
+                    <img src="../View/template/img/homeMedio.png" style="float:left; margin: 4px;">
+        <h1>Bem-vindo, {nomeLogin}</h1></div>
+                <div class="links">
+                    <p style="float: left;">
+                        <a href="">Inicio</a>
+                        <img src="../View/template/img/seta.png" alt="">
+                    </p>
+                </div>
+                <div style="margin:auto; display:table;">
+                <fieldset style="background:#060; margin-right:15px; margin-bottom:15px; margin-top:15px;">
+                	<form name="" action="" method="post">
+                    	<input type="text" name="vender" id="suggest1" value="Vender?" size="35" class="input" onClick="javascript:this.value=''">
+                    	<input type="submit" name="venderbt" value="Vender"  class="botaoCinzaGrande" >
+                    </form>
+                </fieldset>
+                <fieldset style="background:#900; margin-bottom:15px; margin-top:15px;"">
+                	<form name="" action="" method="post">
+                    	<input type="text" name="receber" id="suggest2" value="Receber?"  size="35" class="input" onClick="javascript:this.value=''">
+                   		<input type="submit" name="receberbt" value="Receber" class="botaoCinzaGrande">
+                    </form>
+                </fieldset>
+                </div>
+                <div id="back-grafico">
+                <h2><img src="../View/template/img/relatorios.png" align="absmiddle" alt="">Estatísticas de vendas mensais</h2>
+                <div id="alerta_amarelo" style="text-align:center;">
+                <big>Mensagens</big>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Crédito<img src="../View/template/img/cima.png" alt=""><big style="color:#060">R$ {valorCreditos}</big>
+                
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Débito<img src="../View/template/img/baixo.png" alt=""><big style="color:#F00">R$ {valorDebitos}</big>
+                </div>
+                <ul id="grafico">
+                	<li>
+                    	<div class="grafico-centro">
+                        	<div class="box-red"><div class="box-cinza" style="height:{red9}px"></div></div>
+                			<div class="box-green"><div class="box-cinza" style="height:{green9}px"></div></div>
+                        </div>
+                	</li>
+                    
+                    <li>
+                    	<div class="grafico-centro">
+                        	<div class="box-red"><div class="box-cinza" style="height:{red8}px"></div></div>
+                			<div class="box-green"><div class="box-cinza" style="height:{green8}px"></div></div>
+                        </div>
+                	</li>
+                    
+                    <li>
+                    	<div class="grafico-centro">
+                        	<div class="box-red"><div class="box-cinza" style="height:{red7}px"></div></div>
+                			<div class="box-green"><div class="box-cinza" style="height:{green7}px"></div></div>
+                        </div>
+                	</li>
+                    
+                    <li>
+                    	<div class="grafico-centro">
+                        	<div class="box-red"><div class="box-cinza" style="height:{red6}px"></div></div>
+                			<div class="box-green"><div class="box-cinza" style="height:{green6}px"></div></div>
+                        </div>
+                	</li>
+                    
+                    <li>
+                    	<div class="grafico-centro">
+                        	<div class="box-red"><div class="box-cinza" style="height:{red5}px"></div></div>
+                			<div class="box-green"><div class="box-cinza" style="height:{green5}px"></div></div>
+                        </div>
+                	</li>
+                    
+                    <li>
+                    	<div class="grafico-centro">
+                        	<div class="box-red"><div class="box-cinza" style="height:{red4}px"></div></div>
+                			<div class="box-green"><div class="box-cinza" style="height:{green4}px"></div></div>
+                        </div>
+                	</li>
+                    
+                    <li>
+                    	<div class="grafico-centro">
+                        	<div class="box-red"><div class="box-cinza" style="height:{red3}px"></div></div>
+                			<div class="box-green"><div class="box-cinza" style="height:{green3}px"></div></div>
+                        </div>
+                	</li>
+                    
+                    <li>
+                    	<div class="grafico-centro">
+                        	<div class="box-red"><div class="box-cinza" style="height:{red2}px"></div></div>
+                			<div class="box-green"><div class="box-cinza" style="height:{green2}px"></div></div>
+                        </div>
+                	</li>
+                    
+                    <li>
+                    	<div class="grafico-centro">
+                        	<div class="box-red"><div class="box-cinza" style="height:{red1}px"></div></div>
+                			<div class="box-green"><div class="box-cinza" style="height:{green1}px"></div></div>
+                        </div>
+                	</li>
+                    
+                </ul>
+                <ul id="dados-grafico">
+                	<li>{data9}</li>
+                    <li>{data8}</li>
+                    <li>{data7}</li>
+                    <li>{data6}</li>
+                    <li>{data5}</li>
+                    <li>{data4}</li>
+                    <li>{data3}</li>
+                    <li>{data2}</li>
+                    <li><b>{data1}</b></li>
+                </ul>    
+                
+                <ul id="legenda">
+                	<li><div class="box-red" style="height:20px;"></div>Débitos</li>
+                 	<li><div class="box-green" style="height:20px;"></div>Créditos</li>
+                </ul>
+                </div>                
+                <ul id="dados" style="margin-top:15px; margin-bottom:15px;">
+                	<li style="margin-left:18px;">
+                    	<div style="background-color: #FFC;"><img src="../View/template/img/debitos.png" alt="Débitos Hoje" align="absmiddle"><big><b>Débitos Hoje</b></big></div>
+                        <div class="cliente-left">&nbsp;&nbsp;Cliente</div>
+                        <!-- BEGIN BLOCK_DEBITOSHOJE -->
+                        <p {estiloBlock}><a>{nomeClientesDH}</a><br>
+                        {enderecoClientesDH}</p>
+                        <!-- END BLOCK_DEBITOSHOJE -->
+                        <div class="cliente-right"><a href="principal.php?idLogin={idLogin}&pagina=listarDebitosHoje">+ Mais</a></div>
+                        
+                    </li>
+                    <li>
+                    	<div style="background-color: #FFE8E8;"><img src="../View/template/img/cdebitos.png" alt="Contas em Débitos" align="absmiddle"><big><b>Contas em Débitos</b></big></div>
+                        
+                        <div class="cliente-left">&nbsp;&nbsp;Cliente</div>
+                        <!-- BEGIN BLOCK_DEBITOS -->
+                        <p {estiloBlock}><a>{nomeClientesD}</a><br>
+                        {enderecoClientesD}</p>
+                        <!-- END BLOCK_DEBITOS -->
+                        <div class="cliente-right"><a href="principal.php?idLogin={idLogin}&pagina=listarDebitos">+ Mais</a></div>
+                        
+                    </li>
+                    <li>
+                    	<div style="background-color: #E8FFE9;"><img src="../View/template/img/cpagas.png" alt="Contas Pagas" align="absmiddle"><big><b>Contas Pagas</b></big></div>
+                        
+                        <div class="cliente-left">&nbsp;&nbsp;Cliente</div>
+                        <!-- BEGIN BLOCK_CONTASPAGAS -->
+                        <p {estiloBlock}><a>{nomeClientesCP}</a><br>
+                        {enderecoClientesCP}</p>
+                        <!-- END BLOCK_CONTASPAGAS -->
+                        <div class="cliente-right"><a href="principal.php?idLogin={idLogin}&pagina=listarCreditos">+ Mais</a></div>
+                        
+                    </li>
+                </ul>
+            </div>
+            <br>
+        </div>
+        <div id="rodape">Copyright © FixaSolucoes.com.br . Todos os direitos reservados</div>
+    </body>
+</html>
+

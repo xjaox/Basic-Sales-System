@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="../View/javaScript/validacao.js"></script>
+        <link type="text/css" rel="stylesheet" href="../View/template/css/style.css">
+        <!--[if IE]>
+        <link type="text/css" rel="stylesheet" href="template/css/iehack.css">
+        <![endif]-->
+        <title>:: Fixa Soluções ::</title>
+         <script type="text/javascript">
+			function goFocus(elementID){
+			document.getElementById(elementID).focus();
+			}
+		</script>
+    </head>
+    <body onLoad="goFocus('usuario')">
+        <div id="topo">
+            <div class="page">
+                <a href="?page=home"><img src="../View/template/img/logo.png"></a>
+            </div>
+        </div>
+        <div class="bemvindo">
+            <div class="page">
+            	<div style="float:left; padding-top: 2px; padding-bottom:2px;">
+					{horaAtual}
+            	</div>
+            </div>
+        </div>
+        <br>
+        <div id="page" style="border-left:0; border-right:0;">
+            <div id="login">
+                <div id="box1">
+                    <p>&nbsp;</p>
+</div>
+                <div id="box2">
+                    <div class="local">
+                        <img src="../View/template/img/loginMedio.png" style="float:left; margin: 4px;"><br>
+                        <h1 style="margin-top:-8px; margin-bottom:19px;">Logar</h1></div>
+                    <div style="background:#F8F8F8; display: table; width: 100%;">
+                        <p style="float: left; padding: 4px;">
+                            <a href="">Inicio</a>
+                            <img src="../View/template/img/seta.png" alt="">
+                            Logar
+                        </p>
+                    </div>
+                    <div id="{corAlerta}">
+                        {imagemAlerta}{menssagemAlerta}</div><br>
+                    <form action="" method="post" id="cadastro" onSubmit="return validarLogin(this);">
+                        <label for="Usuario">Usuário:</label>
+                        <input type="text" name="usuario" id="usuario" onClick="formulario('usuario','erroUsuario');"><br>
+                        <label for="Senha">Senha: </label>
+                        <input type="password" name="senha" id="senha" onClick="formulario('senha','erroSenha');"><br>
+                        <div id="erroUsuario" align="center" style="display:none"><strong>Preencha o Usuário!</strong></div>
+                        <div id="erroSenha" align="center" style="display:none"><strong>Preencha a Senha!</strong></div>
+                        <br><hr>
+                        <input style="margin-left:190px" type="submit" class="botaoAzul" name="entrar" value="Entrar"><br><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="rodape">Copyright © FixaSolucoes.com.br . Todos os direitos reservados</div>
+    </body>
+</html>

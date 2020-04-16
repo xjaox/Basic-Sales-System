@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="../View/template/css/style.css">
+        <!--[if IE]>
+        <link type="text/css" rel="stylesheet" href="template/css/iehack.css">
+        <![endif]-->
+        <title>:: Fixa Soluções ::</title>
+        <script type="text/javascript" src="../View/template/js/validacao.js"></script>
+        
+        
+       <script>
+function enter()
+  {
+	  var tecla=window.event.keyCode;
+	  if(tecla == 49)//opção Pagamento
+	  	location.href = "../Control/pagamento.php?idLogin={idLogin}";
+  	  if(tecla == 50)//opção Vendas
+	  	location.href = "../Control/vendas.php?idLogin={idLogin}";
+		
+	  if(tecla == 42)//opção voltar (sair)
+	  	location.href = "../Control/principal.php?idLogin={idLogin}&sair";
+  }
+</script>
+
+       
+    </head>
+    <body onKeyPress="enter()">
+        <div id="topo">
+            <div class="page">
+                <a href="?page=home"><img src="../View/template/img/logo.png" id="logo"></a>
+               
+            </div>
+        </div>
+        <div class="bemvindo">
+            <div class="page"><div style="float:left; padding-top: 6px;"><b>{nomeLogin}</b> | {horaAtual}</div>
+                <ul class="opcoes">
+                    <li><a href=""><img src="../View/template/img/opcoes.png" alt="Opções">Opções <img src="../View/template/img/seta2.png" alt="Opções"></a>
+                        <ul>
+                            <li><a href="{configConta}"><img src="../View/template/img/perfil.png" alt="Perfil">Perfil</a></li>
+                            <li><a href="{suporte}"><img src="../View/template/img/suporte.png" alt="Suporte">Suporte</a></li>
+                            <li><a href="{sair}"><img src="../View/template/img/sair.png" alt="Sair">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div id="page">
+            <div id="acessoRapido">
+                <div class="local">
+                      <img src="../View/template/img/caixaMedio.png" style="float:left; margin: 4px;">
+                      <h1>Acesso Rápido</h1>
+                </div>
+                <div style="background:#F8F8F8; display: table; width: 100%;">
+                    <p style="float: left; padding: 4px;">
+                        <a href="">Inicio</a>
+                        <img src="../View/template/img/seta.png" alt="">
+                        <strong>Caixa</strong>
+                    </p>
+                </div>
+                <br>
+                <div id="{corAlerta}">
+                    {imagemAlerta}{menssagemAlerta}
+                </div>
+                <br>
+                <form action="" method="post" >
+                    <div style="float:left; margin-left:280px; margin-bottom:30px;">                       
+                       <table align="center">
+                            <tr>
+                                <td width="45%"><h4>Tecla de Atalho</h4></td>
+                                <td width="15%"></td>
+                                <td width="40%"></td>
+                            </tr>
+                            
+                            <tr>
+                                <td><img src="../View/template/img/teclaAtalhoN1.png"></td>
+                                <td><img src="../View/template/img/cobrarMedio.png"></td>
+                                <td align="left"><h1>PAGAMENTO</h1></td>
+                            </tr>
+                            
+                            <tr>
+                                <td><img src="../View/template/img/teclaAtalhoN2.png"></td>
+                                <td><img src="../View/template/img/venderMedio.png"></td>
+                                <td align="left"><h1>VENDAS</h1></td>
+                            </tr>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+
+<div id="rodape">Copyright © FixaSolucoes.com.br . Todos os direitos reservados</div>
+        <script language="javascript">
+		function adicionar(pagina){
+		top.location.href = pagina;
+		}
+		</script>
+    </body>
+</html>

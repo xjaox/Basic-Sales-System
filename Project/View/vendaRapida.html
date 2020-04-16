@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="../View/template/css/style.css">
+        <!--[if IE]>
+        <link type="text/css" rel="stylesheet" href="template/css/iehack.css">
+        <![endif]-->
+        <title>:: Fixa Soluções ::</title>
+        <script type="text/javascript" src="../View/template/js/validacao.js"></script>
+        
+        
+       <script type="text/javascript">
+	  function goFocus(elementID){
+	  	document.getElementById(elementID).focus();
+	  }
+	  </script>
+
+       
+    </head>
+    <body onLoad="goFocus('codigo')">
+        <div id="topo">
+            <div class="page">
+                <a href="?page=home"><img src="../View/template/img/logo.png" id="logo"></a>
+               
+            </div>
+        </div>
+        <div class="bemvindo">
+            <div class="page"><div style="float:left; padding-top: 6px;"><b>{nomeLogin}</b> | {horaAtual}</div>
+                <ul class="opcoes">
+                    <li><a href=""><img src="../View/template/img/opcoes.png" alt="Opções">Opções <img src="../View/template/img/seta2.png" alt="Opções"></a>
+                        <ul>
+                            <li><a href="{configConta}"><img src="../View/template/img/perfil.png" alt="Perfil">Perfil</a></li>
+                            <li><a href="{suporte}"><img src="../View/template/img/suporte.png" alt="Suporte">Suporte</a></li>
+                            <li><a href="{sair}"><img src="../View/template/img/sair.png" alt="Sair">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div id="page">
+              <div class="local">
+                    <img src="../View/template/img/venderMedio.png" style="float:left; margin: 4px;">
+            <h1>Venda Rapida</h1></div>
+                <div style="background:#F8F8F8; display: table; width: 100%;">
+                    <p style="float: left; padding: 4px;">
+                        <a href="">Inicio</a>
+                        <img src="../View/template/img/seta.png" alt="">
+                        <strong>Vendas</strong>
+                        <img src="../View/template/img/seta.png" alt="">Vender
+                    </p>
+                </div>
+                <br>
+                <div id="{corAlerta}">
+                	{imagemAlerta}{menssagemAlerta}
+                </div>
+                <br>
+                <form action="" method="post" id="receber">
+                    <div style="float:left; width:60%; margin-left:20px;">
+                        <div style="width:500px; float:left">
+                               
+                               <table>
+                               	<tr>
+                                	<td>
+                                    Codigo: 
+                                    </td>
+                                    
+                                    <td>
+                                     <input type="text" name="codigo" id="codigo"  size="8" 
+                                maxlength="10" >
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                	<td>
+                                    Nome: 
+                                    </td>
+                                    
+                                    <td>
+                                    <input type="text" name="nome" id="nome"   size="50" 
+                                maxlength="50" accesskey="S">
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                	<td>
+                                    Valor: 
+                                    </td>
+                                    
+                                    <td>
+                                    <input type="text" name="valorPagamento" id="pagamento"
+                                 onClick="formulario('valorCompra','erroValorCompra');" 
+                                 onKeyPress="reais(this,event)" onKeyDown="backspace(this,event)" 
+                                 size="8" maxlength="10">
+                                    </td>
+                                    
+                                    <td>
+                                     <input type="submit" class="botaoCinzaGrande" name="proximo" value="Pagar">
+                                    </td>
+                                </tr>
+                               </table>
+                               
+                        </div>
+                    </div>
+                    <div style="float:left; width:35%" >
+                        <div style="width:300px; float:left" >
+                                
+                               
+                       </div>
+                    </div>
+          		</form>
+    	</div>
+        <br>
+
+<div id="rodape">Copyright © FixaSolucoes.com.br . Todos os direitos reservados</div>
+        <script language="javascript">
+		function adicionar(pagina){
+		top.location.href = pagina;
+		}
+		</script>
+    </body>
+</html>

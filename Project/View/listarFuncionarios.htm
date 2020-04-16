@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="../View/template/css/style.css">
+        <!--[if IE]>
+        <link type="text/css" rel="stylesheet" href="template/css/iehack.css">
+        <![endif]-->
+        <title>:: Fixa Soluções ::</title>
+    </head>
+    <body>
+        <div id="topo">
+            <div class="page">
+                <a href="?page=home"><img src="../View/template/img/logo.png" id="logo"></a>
+              
+            </div>
+        </div>
+        <div class="bemvindo">
+            <div class="page"><div style="float:left; padding-top: 6px;"><b>{nomeLogin}</b> | {horaAtual}</div>
+                <ul class="opcoes">
+                    <li><a href=""><img src="../View/template/img/opcoes.png" alt="Opções">Opções <img src="../View/template/img/seta2.png" alt="Opções"></a>
+                        <ul>
+                            <li><a href="{configConta}"><img src="../View/template/img/perfil.png" alt="Perfil">Perfil</a></li>
+                            <li><a href="{suporte}"><img src="../View/template/img/suporte.png" alt="Suporte">Suporte</a></li>
+                            <li><a href="{sair}"><img src="../View/template/img/sair.png" alt="Sair">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div id="page">
+            <div id="left">
+                <ul id="menu_left">
+                    <li><a href="principal.php?idLogin={idLogin}" ><img src="../View/template/img/home.png" alt="Início">Início</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=vender"><img src="../View/template/img/vender.png" alt="Vender">Vendas</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=cobrar"><img src="../View/template/img/cobrar.png" alt="Cobrar">Pagamentos</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=clientes" ><img src="../View/template/img/clientes.png" alt="Início">Clientes</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=funcionarios"><img src="../View/template/img/funcionarios.png" alt="Funcionários">Funcionários</a></li>
+                    <li><a href="" id="active"><img src="../View/template/img/relatorios.png" alt="Relatórios">Relatórios <img src="../View/template/img/seta2.png" alt="Opções"></a>
+                        <ul id="clientes">
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarClientes">Clientes</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarFuncionarios">Funcionarios</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarCreditos">Creditos</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarDebitos">Debitos Totais</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarDebitosHoje">Debitos Hoje</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>{experira}<br>
+                    {versao}</p>
+	            <div id="anuncio">&nbsp;</div>
+            </div>
+
+            <div id="geral">
+                <div class="local">
+                    <img src="../View/template/img/funcionariosMedio.png" alt="Mensagens Pessoais" title="Mensagens Pessoais" style="float:left; margin: 4px;">
+                    <h1>Lista de Funcionários</h1></div>
+                <div style="background:#F8F8F8; display: table; width: 100%;">
+                    <p style="float: left; padding: 4px;">
+                        <a href="">Inicio</a>
+                        <img src="../View/template/img/seta.png" alt="">
+                        <strong>Funcionários</strong>
+                        <img src="../View/template/img/seta.png" alt=""> Lista de Funcionários
+                    </p>
+                    <p style="float: right; padding: 4px;">Existe atualmente <b>{quantidadeCadastros}</b> funcionários cadastrados</p>
+                </div>
+                <br>
+                <input type="submit" href="" style="margin-left:15px;" class="botaoAzul" name="adicionar" value="Adicionar Funcionário" onClick="javascript:adicionar('../Control/cadastrarFuncionarios.php?idLogin={idLogin}');">
+                <form action="" method="get" id="pesquisa">
+                	<input type="hidden" name="idLogin" value="{idLogin}">
+                    <input type="text" name="Buscar" id="pesquisar">
+                    <input type="submit" class="botaoCinza" name="Busca" value="Buscar">
+                </form>
+                <br><br>
+                <!--
+                <div id="{corAlerta}">
+                    <img src="{imagemAlerta}" alt="">{menssagemAlerta}
+                </div>
+                -->
+                <table cellspacing="0" cellpading="0">
+                    <tr>
+                        <th width="5%">ID</th>
+                        <th width="40%">Nome</th>
+                        <th width="20%">Telefone</th>
+                        <th width="20%">CPF</th>
+                        <th width="15%">Ações <img src="../View/template/img/seta2.png" alt="Opções"></th>
+                    </tr>
+                    <!-- BEGIN BLOCK_FUNCIONARIOS -->
+                    <tr class="{corBloco}">
+                        <td>{id}</td>
+                        <td class="nome"><a href="">{nome}</a><br>{apelido}</td>
+                        <td>{telefone}</td>
+                        <td>{cpf}</td>
+                        <td>&nbsp;
+                            <ul class="opcoes">
+                                <li><a href=""><img src="../View/template/img/opcoes.png" alt="Opções">Opções <img src="../View/template/img/seta2.png" alt="Opções"></a>
+                                    <ul>
+                                    
+                                         <li><a href="../Control/listarFuncionarios.php?idLogin={idLogin}&editar={id}"><img src="../View/template/img/editar.png" alt="Editar">Editar</a></li>
+                                        <li><a href="../Control/listarFuncionarios.php?idLogin={idLogin}&excluir={id}"><img src="../View/template/img/sair.png" alt="Excluir">Excluir</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+					<!-- END BLOCK_FUNCIONARIOS -->
+                </table>
+                <p style="background:url('../View/template/img/fundo_th.png');">&nbsp;</p>
+                <div id="{paginacao}">
+                <!-- BEGIN BLOCK_PAGINACAO -->
+                    <a href="../Control/listarFuncionarios.php?pagina={proxima}{buscar}" class="{botao}">{numerosPaginas}</a>
+                <!-- END BLOCK_PAGINACAO -->
+                </div>
+            </div>
+        </div>
+        <div id="rodape">Copyright © FixaSolucoes.com.br . Todos os direitos reservados</div>
+        <script language="javascript">
+		function adicionar(pagina){
+		top.location.href = pagina;
+		}
+		</script>
+    </body>
+</html>

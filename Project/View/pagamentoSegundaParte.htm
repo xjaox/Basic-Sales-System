@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="../View/template/css/style.css">
+        <!--[if IE]>
+        <link type="text/css" rel="stylesheet" href="template/css/iehack.css">
+        <![endif]-->
+        <title>:: Fixa Soluções ::</title>
+        <script type="text/javascript" src="../View/template/js/validacao.js"></script>
+         <script type="text/javascript">
+	 		function goFocus(elementID){
+	  			document.getElementById(elementID).focus();
+	 		}
+	  	</script>
+        
+         <script>
+		  function enter()
+			{
+				var tecla=window.event.keyCode;
+				
+				//Comandos especificos da pagina
+				if(tecla == 100)//detalhes de vendas
+				  location.href = "../Control/detalhesPagamento.php?idLogin={idLogin}&idPagamento={idPagamento}";
+				
+				//Comandos Gerais para todas as paginas
+				if(tecla == 118 || tecla == 42) //voltar
+				  location.href = "../Control/pagamento.php?idLogin={idLogin}";
+				if(tecla == 99)//pagina inicial caixa
+				  location.href = "../Control/systemCaixa.php?idLogin={idLogin}";
+				  
+				
+			}
+		 </script>
+
+
+    </head>
+    <body onLoad="goFocus('pagamento')" onKeyPress="enter()">
+        <div id="topo">
+            <div class="page">
+                <a href="?page=home"><img src="../View/template/img/logo.png" id="logo"></a>
+               
+            </div>
+        </div>
+        <div class="bemvindo">
+            <div class="page"><div style="float:left; padding-top: 6px;"><b>{nomeLogin}</b> | {horaAtual}</div>
+                <ul class="opcoes">
+                    <li><a href=""><img src="../View/template/img/opcoes.png" alt="Opções">Opções <img src="../View/template/img/seta2.png" alt="Opções"></a>
+                        <ul>
+                            <li><a href="{configConta}"><img src="../View/template/img/perfil.png" alt="Perfil">Perfil</a></li>
+                            <li><a href="{suporte}"><img src="../View/template/img/suporte.png" alt="Suporte">Suporte</a></li>
+                            <li><a href="{sair}"><img src="../View/template/img/sair.png" alt="Sair">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div id="page">
+            <div id="left">
+                <ul id="menu_left">
+                    <li><a href="principal.php?idLogin={idLogin}" ><img src="../View/template/img/home.png" alt="Início">Início</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=vender"><img src="../View/template/img/vender.png" alt="Vender">Vendas</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=cobrar" id="active"><img src="../View/template/img/cobrar.png" alt="Cobrar">Pagamentos</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=clientes" ><img src="../View/template/img/clientes.png" alt="Início">Clientes</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=funcionarios"><img src="../View/template/img/funcionarios.png" alt="Funcionários">Funcionários</a></li>
+                    <li><a href=""><img src="../View/template/img/relatorios.png" alt="Relatórios">Relatórios <img src="../View/template/img/seta2.png" alt="Opções"></a>
+                        <ul id="clientes">
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarClientes">Clientes</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarFuncionarios">Funcionarios</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarCreditos">Creditos</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarDebitos">Debitos Totais</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarDebitosHoje">Debitos Hoje</a></li>
+                        </ul>
+                    </li>
+                </ul>
+               <p>{experira}<br>
+                    {versao}</p>
+            </div>
+
+            <div id="geral">
+                <div class="local">
+                    <img src="../View/template/img/cobrarMedio.png" style="float:left; margin: 4px;">
+                    <h1>Pagamento</h1></div>
+                <div style="background:#F8F8F8; display: table; width: 100%;">
+                    <p style="float: left; padding: 4px;">
+                        <a href="">Inicio</a>
+                        <img src="../View/template/img/seta.png" alt="">
+                        <strong>Pagamento</strong>
+                        <img src="../View/template/img/seta.png" alt=""> Receber
+                    </p>
+                </div>
+                <br>
+                <div id="{corAlerta}">
+                	{imagemAlerta}{menssagemAlerta}
+                </div>
+				<div style="float:left; width:60%; margin-left:20px;">
+                	<h1>{nomeClientes}</h1>
+                   
+                    <table cellspacing="0" cellpading="0" width="50%">
+                        <tr>
+                            <th width="15%">ID</th>
+                            <th width="25%">Valor Total</th>
+                            <th width="25%">Vencimento</th>
+                            <th width="25%">Ações <img src="../View/template/img/seta2.png" alt="Opções"></th>
+                        </tr>
+                            <!-- BEGIN BLOCK_PAGAMENTO -->
+                            <tr class="tr_color_{corBloco}">
+                                <td height="40px;">{idPagamento}</td>
+                                <td class="nome"><center><b>{valorPagamento}</b></center></td>
+                                <td>{dataVencimento}</td>
+                                <td>&nbsp;
+                    				<ul class="opcoes">
+                                        <li>
+                                        	<a href="{detalhesPagamento}"><img src="../View/template/img/detalhes.png" alt="Opções">Detalhes</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <!-- END BLOCK_PAGAMENTO -->
+                    </table>
+                    <p style="background:url('../View/template/img/fundo_th.png');">&nbsp;</p>
+                </div>
+                <div style="float:left; width:35%">
+                 	<div style="float:left; margin-left:35px;">
+                    	<h1>Total: <span class="vermelho">{totalPagamento}</span><br>
+                    	</h1>
+                    </div>
+                    <form action="" method="post" id="receber">
+                        <input type="text" name="valorPagamento" id="pagamento" onClick="formulario('valorCompra','erroValorCompra');" onKeyPress="reais(this,event)" onKeyDown="backspace(this,event)" size="8" maxlength="10">
+                        <input type="submit" class="botaoCinzaGrande" name="proximo" value="Receber">
+                    </form>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div id="rodape">Copyright © FixaSolucoes.com.br . Todos os direitos reservados</div>
+        <script language="javascript">
+		function adicionar(pagina){
+		top.location.href = pagina;
+		}
+		</script>
+    </body>
+</html>

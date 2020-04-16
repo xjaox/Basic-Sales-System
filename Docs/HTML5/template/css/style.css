@@ -1,0 +1,496 @@
+/*
+    Document   : style.css
+    Created on : 15/01/2011, 17:02:38
+    Author     : Alone
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+* {
+    margin:0;
+    padding:0;
+    border:0;
+    color: #666;
+}
+body {
+    background: #FFF;
+    text-align: center;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+h1 {font-size: 20px; color: #444; margin-bottom: 10px;font-weight: bold;}
+h2 {font-size: 16px; color: #555;}
+h3 {font-size: 14px; color: #555;}
+hr {border: 1px dashed #DDD; margin: 10px;}
+.vermelho, .verde, .amarelo {font-size: 20px;}
+.vermelho {color:#F00;}
+.verde {color:#9C0;}
+.amarelo {color:#FC0;}
+a:hover {color:#F00;}
+a {text-decoration: none;}
+
+.botaoAzul{background:url(../img/bgBotaoAzul.png) repeat-x; cursor:pointer; font-weight:bold; border:#A0B3D9 solid 1px; height:23px; padding-left:5px; padding-right:5px;}
+
+.botaoAzul:hover{background:url(../img/bgBotaoAzulHover.png) repeat-x; cursor:pointer; font-weight:bold; border:#A0B3D9 solid 1px; height:23px; padding-left:5px; padding-right:5px;}
+
+.botaoCinza{background:url(../img/bgBotaoCinza.png) repeat-x; cursor:pointer; font-weight:bold; border:#CCC solid 1px; height:23px; padding-left:5px; padding-right:5px;}
+
+.botaoCinza:hover{background:url(../img/bgBotaoCinzaHover.png) repeat-x; cursor:pointer; font-weight:bold; border:#CCC solid 1px; height:23px; padding-left:5px; padding-right:5px;}
+
+.botaoCinzaGrande{background:url(../img/bgBotaoCinzaGrande.png) repeat-x; cursor:pointer; font-weight:bold; border:#CCC solid 1px; height:40px; padding-left:5px; padding-right:5px;}
+
+.botaoCinzaGrande:hover{background:url(../img/bgBotaoCinzaGrandeHover.png) repeat-x; cursor:pointer; font-weight:bold; border:#CCC solid 1px; height:40px; padding-left:5px; padding-right:5px;}
+
+.page {
+    width: 945px;
+    text-align: left;
+    margin: 0 auto;
+    padding: 4px;
+    display: table;
+}
+#page {
+    text-align: left;
+    margin: 0 auto;
+    width: 945px;
+    border: 1px solid #DDD;
+    display: table;
+    margin-bottom: -1px
+}
+#topo {
+    border-bottom: 1px solid #DDD;
+    display: table;
+    width: 100%;
+    background: #F0F0F0;
+	background:url(../img/bgTopo.jpg);
+}
+#menu_admin {
+    margin: 27px 24px 24px 24px;
+}
+#menu_admin, .opcoes {
+    float:right;
+    font-size: 11px;
+}
+#menu_admin li {
+    display: inline-block;
+	padding-right:5px;
+}
+.opcoes li {
+    text-align: left;
+    display:table;
+    border: 1px solid #DDD;
+    background: #FFF;
+    width: 90px;
+}
+.opcoes li:hover {
+    background: #FFB;
+}
+.opcoes ul li {
+    margin-left: -1px;
+    margin-bottom: -1px;
+}
+#menu_admin a, .opcoes a, table .opcoes li a {
+    display: block;
+    padding: 3px;
+    color: #333;
+    text-decoration: none;
+}
+#menu_admin a img, .opcoes a img {
+    vertical-align: middle;
+}
+#menu_admin a:hover, .opcoes a img, #left #menu_left a:hover {
+    color: #F00;
+}
+#menu_admin ul, .opcoes ul {
+    display: none;
+    position: absolute;
+}
+#menu_admin li:hover ul, .opcoes li:hover ul {
+    display: block;
+}
+.bemvindo {
+    border-bottom: 1px solid #DDD;
+    background: url('../img/bemvindo.png');
+    display: table;
+    width: 100%;
+    text-align: left;
+}
+#logo {
+    margin: 10px;
+    float: left;
+}
+#left {
+    font-family: Verdana;
+    width: 182px;
+    float: left;
+	height:auto;
+	position:relative;
+}
+
+#left p {
+    padding: 10px;
+    font-size: 13px;
+}
+#left #menu_left li {
+    display: block;
+    font-weight: bold;
+    border-bottom: 1px solid #DDD;
+    background-image: url('../img/fundo_menu_left.png');
+    background-repeat: repeat-x;
+}
+#left #menu_left #clientes li {
+    display: list-item;
+    list-style-image: url('../img/seta.png');
+    border-bottom: none;
+}
+#menu_left ul, #menu_left ul li a {
+    background: #FFF;
+}
+#menu_left #clientes {
+    display: none;
+}
+#menu_left li:hover #clientes {
+    display: block;
+}
+#left #menu_left li:hover {
+    background-image: url('../img/fundo_menu_left_h.png');
+}
+#left #menu_left li a {
+    color: #666;
+    display: block;
+    padding: 4px;
+}
+#left #menu_left li a img {
+    vertical-align: middle;
+}
+#menu_left #clientes {
+    margin-left: 20px;
+    padding: 4px;
+}
+#menu_left #clientes a {
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: normal;
+}
+.local  {
+    display: table;
+    width: 100%;
+    background: #F0F0F0;
+	margin-bottom:-9px;
+}
+#pesquisa {
+    float: right;
+	margin-right:10px;
+}
+#pesquisar {
+    border: 1px solid #DDD;
+    height: 23px;
+	width:250px;
+}
+
+#receber {
+    float: right;
+	margin-bottom:20px;
+}
+
+#pagamento {
+    border: 1px solid #DDD;
+	font-size:15px;
+    height: 40px;
+	width:150px;
+	padding-left:5px;
+}
+
+.links {
+    background:#F8F8F8; display: table; width: 100%;
+}
+.links a {
+    text-decoration: underline;
+}
+.links p {
+    padding: 4px;
+}
+#buscar {
+    background-image: url('../img/buscar.png');
+    width: 73px;
+    height: 31px;
+    cursor: pointer;
+}
+#buscar:hover {
+    background-image: url('../img/buscar_h.png');
+}
+#alerta_amarelo img, #alerta_verde img, #alerta_vermelho img {
+    vertical-align: middle;
+    margin: 4px;
+}
+#alerta_amarelo, #alerta_verde, #alerta_vermelho {
+    padding: 6px;
+    font-size: 13px;
+    color: #595959;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    margin-top:10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+#alerta_amarelo {background-color: #FFC;}
+#alerta_verde {background-color: #E8FFE9;}
+#alerta_vermelho {background-color: #FFE8E8;}
+#geral {
+    float: right;
+    width: 762px;
+    line-height: 2;
+    margin-left: -1px;
+	border-left:#DDD solid 1px;
+    display: table;
+}
+#geral a {
+    color:#03D;
+}
+#geral a:hover {
+    text-decoration: underline;
+}
+#cadastro label, #cad_parte1 label, #cad_parte2 label {
+    text-align: right;
+    margin: 6px;
+    width: 130px;
+    display: inline-block;
+    vertical-align: middle;
+}
+#cad_parte1 label {
+    width: 80px;
+}
+#cad_parte2 {
+    padding: 20px;
+}
+#cadastro input, #cadastro select, #cad_parte1 input, #cad_parte1 select, #cad_parte2 input {
+    border: 1px solid #DDD;
+    padding: 4px;
+}
+#cadastro input, #cad_parte1 input {
+    height: 24px;
+}
+#cadastro .erro {
+    background: #FFE8E8;
+}
+
+#cadastro select {
+    padding: 2px;
+}
+table {
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+}
+table th {
+    background-image: url('../img/fundo_th.png');
+}
+table tr, th, td {
+    padding: 4px;
+    color: #666;
+}
+table .opcoes {
+    margin-top:-14px;
+    margin-left: 6px;
+    background: none;
+    display: none;
+    float: none;
+}
+table tr:hover .opcoes {
+    display: block;
+    float: none;
+}
+table tr:hover {
+    background-color: #E6EAFF;
+}
+.tr_color_1 {
+    background: #FFF;
+}
+.tr_color_2 {
+    background: #F8F8F8;
+}
+.nome {text-align: left;}
+#men_left, #men_right, #men_left2, #men_right2 {
+    width: 50%;
+    float: left;
+    border-top:1px solid #CCC;
+}
+#men_left2, #men_right2 {
+    border-left: 1px solid #CCC;
+}
+#men_left2 {margin: -1px;}
+#men_left {
+    border-right:1px solid #CCC;
+    margin-left: -1px;
+}
+#men_right, #men_left2 {
+    background: #F7F9FE;
+    margin-top: 10px;
+    border-left: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    margin-left: -1px;
+}
+#men_left h2, #men_right2 h2 {padding: 6px;}
+#men_right h2, #men_left h2, #men_left2 h2 {padding-left: 10px;}
+#cad_parte1 {
+    padding: 20px;
+    display: table;
+    float: left;
+    border-left: 1px solid #CCC;
+    margin-left: -1px;
+}
+#box1 , #box2 {
+    padding: 30px;
+    width: 400px;
+    float: left;
+}
+#box2 {
+    padding: 0;
+    border-left: 1px solid #CCC;
+    width: 484px;
+}
+#paginacao {
+    text-align: center;
+    margin: 6px;
+}
+#paginacao a {
+    padding: 4px;
+    line-height: normal;
+    display: inline-block;
+    border: 1px solid #DDD;
+    background-image: url('../img/bgBotaoCinza.png');
+    color: #444;
+    font-weight: bold;
+}
+#paginacao a:hover {
+    background-image: url('../img/bgBotaoCinzaHover.png');
+    text-decoration: none;
+}
+#active , #paginacao .active {
+    background-color: #FFB;
+    background-image: none;
+    text-decoration: none;
+    color: #F00;
+}
+#rodape {
+    text-align: center;
+    color:#888;
+    padding: 10px;
+    clear:both;
+    background:#F8F8F8;
+	margin-top:15px;
+}
+
+fieldset {
+	padding: 4px 10px 4px 10px;
+	width: auto;
+	float: left;
+	margin: 6px;
+	}
+fieldset input {
+	float: left;
+	font-size; 14px;
+	border: 1px solid #ddd;
+	font-weight: bold;
+}
+fieldset .input {
+	padding: 11px;
+	display:block;
+	margin-right:4px;
+	height:39px;
+}
+#back-grafico {
+	background:#EEE;
+	display:table;
+	width:95%;
+	margin-left:18px;
+}
+#dados {
+	text-align:center;
+	clear:both;
+}
+#dados li {
+	display:block;
+	width:236px;
+	margin:4px;
+	float:left;
+}
+#dados p {
+	line-height:normal;
+	text-align:left;
+	padding:6px;
+	border-bottom:1px solid #DDD;
+}
+.cliente-left, .cliente-right {
+	background: url('../img/back-cliente.png');
+	border-bottom:1px solid #999;
+	border-top:1px solid #999;
+}
+.cliente-left {
+	text-align:left;
+	font-weight:bold;
+}
+.cliente-right {
+	text-align:right;
+}
+.cinza {
+	background:#EEE;
+}
+.box-red, .box-green {
+	display:block;
+	float:left;
+	height:100px;
+	margin:2px;
+	width:20px;
+}
+.box-cinza {
+	height:100px;
+	background:#EEE;
+}
+.box-red {
+	background:#900;
+}
+.box-green {
+	background:#060;
+}
+#grafico, #dados-grafico {
+	display:table;
+	margin:-1 auto;
+	border-top:#000 solid 1px;
+}
+#grafico li {
+	display:block;
+	width:74px;
+	text-align:center;
+	float:left;
+}
+
+#dados-grafico li {
+	display:block;
+	width:74px;
+	text-align:center;
+	float:left;
+	border-bottom:1px solid #999;
+}
+
+.grafico-centro {
+	display:table;
+	margin:0 auto;
+}
+#legenda {
+	display:table;
+	margin:10px auto;
+	clear:both;
+	border:1px solid #FFF;
+	padding:4px;
+}
+#legenda li {
+	display:block;
+	float:left;
+	padding:4px;
+}

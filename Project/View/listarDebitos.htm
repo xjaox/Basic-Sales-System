@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="../View/template/css/style.css">
+        <!--[if IE]>
+        <link type="text/css" rel="stylesheet" href="template/css/iehack.css">
+        <![endif]-->
+        <title>:: Fixa Soluções ::</title>
+    </head>
+    <body>
+        <div id="topo">
+            <div class="page">
+                <a href="?page=home"><img src="../View/template/img/logo.png" id="logo"></a>
+              
+            </div>
+        </div>
+        <div class="bemvindo">
+            <div class="page"><div style="float:left; padding-top: 6px;"><b>{nomeLogin}</b> | {horaAtual}</div>
+                <ul class="opcoes">
+                    <li><a href=""><img src="../View/template/img/opcoes.png" alt="Opções">Opções <img src="../View/template/img/seta2.png" alt="Opções"></a>
+                        <ul>
+                            <li><a href="{configConta}"><img src="../View/template/img/perfil.png" alt="Perfil">Perfil</a></li>
+                            <li><a href="{suporte}"><img src="../View/template/img/suporte.png" alt="Suporte">Suporte</a></li>
+                            <li><a href="{sair}"><img src="../View/template/img/sair.png" alt="Sair">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div id="page">
+           <div id="left">
+                <ul id="menu_left">
+                    <li><a href="principal.php?idLogin={idLogin}" ><img src="../View/template/img/home.png" alt="Início">Início</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=vender"><img src="../View/template/img/vender.png" alt="Vender">Vendas</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=cobrar"><img src="../View/template/img/cobrar.png" alt="Cobrar">Pagamentos</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=clientes" ><img src="../View/template/img/clientes.png" alt="Início">Clientes</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=funcionarios"><img src="../View/template/img/funcionarios.png" alt="Funcionários">Funcionários</a></li>
+                    <li><a href="" id="active"><img src="../View/template/img/relatorios.png" alt="Relatórios">Relatórios <img src="../View/template/img/seta2.png" alt="Opções"></a>
+                        <ul id="clientes">
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarClientes">Clientes</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarFuncionarios">Funcionarios</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarCreditos">Creditos</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarDebitos">Debitos Totais</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarDebitosHoje">Debitos Hoje</a></li>
+                        </ul>
+                    </li>
+                </ul>
+               <p>{experira}<br>
+                    {versao}</p>
+	            <div id="anuncio">&nbsp;</div>
+            </div>
+
+            <div id="geral">
+                <div class="local">
+                    <img src="../View/template/img/debitosMedio.png" style="float:left; margin: 4px;">
+                    <h1>Débitos</h1></div>
+                <div style="background:#F8F8F8; display: table; width: 100%;">
+                    <p style="float: left; padding: 4px;">
+                        <a href="">Inicio</a>
+                        <img src="../View/template/img/seta.png" alt="">
+                        <strong>Relatórios</strong>
+                        <img src="../View/template/img/seta.png" alt=""> Débitos
+                    </p>
+                    <p style="float: right; padding: 4px;">Existe atualmente <b>{quantidadeCadastros}</b> clientes cadastrados</p>
+                </div>
+                <br>
+                <form action="" method="get" id="pesquisa">
+                	<input type="hidden" name="idLogin" value="{idLogin}">
+                    <input type="text" name="Buscar" id="pesquisar">
+                    <input type="submit" class="botaoCinza" name="Busca" value="Buscar">
+                </form>
+                <br><br>
+                <!--
+                <div id="{corAlerta}">
+                	<img src="{imagemAlerta}" alt="">{menssagemAlerta}
+                </div>
+                -->
+                <table cellspacing="0" cellpading="0">
+                    <tr>
+                        <th width="5%">ID</th>
+                        <th width="30%">Nome</th>
+                        <th width="15%">Vencimento</th>
+                        <th width="15%">Total</th>
+                        <th width="20%">Status</th>
+                        <th width="15%"></th>
+                    </tr>
+                    <!-- BEGIN BLOCK_DEBITOS -->
+                    <tr class="{corBloco}">
+                        <td>{id}</td>
+                        <td class="nome"><center><b>{nome}</b><br>{apelido}</center></td>
+                        <td>{dataVencimento}</td>
+                        <td>{totalVencimento}</td>
+                        <td>
+                            {estrela01}
+                            {estrela02}
+                            {estrela03}
+                            {estrela04}
+                            {estrela05}
+                        </td>
+                        <td>&nbsp;
+                           
+                        </td>
+                    </tr>
+                    <!-- END BLOCK_DEBITOS -->
+                </table>
+                <p style="background:url('../View/template/img/fundo_th.png');">&nbsp;</p>
+                <div id="{paginacao}">
+                	<!-- BEGIN BLOCK_PAGINACAO -->
+                    <a href="listarClientes.php?pagina={proxima}{buscar}" class="{botao}">{numerosPaginas}</a>
+                	<!-- END BLOCK_PAGINACAO -->
+                </div>
+            </div>
+        </div>
+        <div id="rodape">Copyright © FixaSolucoes.com.br . Todos os direitos reservados</div>
+    </body>
+</html>

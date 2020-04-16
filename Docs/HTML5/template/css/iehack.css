@@ -1,0 +1,12 @@
+#menu_admin li {
+    float: left;
+    margin: 2px;
+}
+#geral {
+    width: 760px;
+}
+.local .opcoes {
+    float: right;
+    margin-top: -20px;
+}
+#pesquisa {margin-top:-30px;}

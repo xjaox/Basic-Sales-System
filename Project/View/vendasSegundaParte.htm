@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="../View/template/css/style.css">
+         <script type="text/javascript" src="../View/template/js/validacao.js"></script>
+        <!--[if IE]>
+        <link type="text/css" rel="stylesheet" href="template/css/iehack.css">
+        <![endif]-->
+        
+         <script type="text/javascript">
+		function goFocus(elementID){
+		document.getElementById(elementID).focus();
+		}
+		</script>
+        
+        <script>
+			function enter()
+			{
+				var tecla=window.event.keyCode;
+				if(tecla == 42) //voltar
+					  location.href = "../Control/vendas.php?idLogin={idLogin}";
+			}
+		</script>
+        <title>:: Fixa Soluções ::</title>
+    </head>
+     <body onLoad="goFocus('ValorCompra')" onKeyPress="enter()">
+        <div id="topo">
+            <div class="page">
+                <a href="?page=home"><img src="../View/template/img/logo.png" id="logo"></a>
+                
+            </div>
+        </div>
+        <div class="bemvindo">
+            <div class="page"><div style="float:left; padding-top: 6px;"><b>{nomeLogin}</b> | {horaAtual}</div>
+                <ul class="opcoes">
+                    <li><a href=""><img src="../View/template/img/opcoes.png" alt="Opções">Opções <img src="../View/template/img/seta2.png" alt="Opções"></a>
+                        <ul>
+                            <li><a href="{configConta}"><img src="../View/template/img/perfil.png" alt="Perfil">Perfil</a></li>
+                            <li><a href="{suporte}"><img src="../View/template/img/suporte.png" alt="Suporte">Suporte</a></li>
+                            <li><a href="{sair}"><img src="../View/template/img/sair.png" alt="Sair">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div id="page">
+           <div id="left">
+                <ul id="menu_left">
+                    <li><a href="principal.php?idLogin={idLogin}" ><img src="../View/template/img/home.png" alt="Início">Início</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=vender" id="active"><img src="../View/template/img/vender.png" alt="Vender">Vendas</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=cobrar" ><img src="../View/template/img/cobrar.png" alt="Cobrar">Pagamentos</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=clientes" ><img src="../View/template/img/clientes.png" alt="Início">Clientes</a></li>
+                    <li><a href="principal.php?idLogin={idLogin}&pagina=funcionarios"><img src="../View/template/img/funcionarios.png" alt="Funcionários">Funcionários</a></li>
+                    <li><a href=""><img src="../View/template/img/relatorios.png" alt="Relatórios">Relatórios <img src="../View/template/img/seta2.png" alt="Opções"></a>
+                        <ul id="clientes">
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarClientes">Clientes</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarFuncionarios">Funcionarios</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarCreditos">Creditos</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarDebitos">Debitos Totais</a></li>
+                            <li><a href="principal.php?idLogin={idLogin}&pagina=listarDebitosHoje">Debitos Hoje</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>{experira}<br>
+                    {versao}</p>
+	            <div id="anuncio">&nbsp;</div>
+            </div>
+
+            <div id="geral">
+                <div class="local">
+                    <img src="../View/template/img/venderMedio.png" style="float:left; margin: 4px;">
+                    <h1>Selecione o cliente</h1></div>
+                <div class="links">
+                    <p style="float: left;">
+                        <a href="">Inicio</a>
+                        <img src="../View/template/img/seta.png" alt="">
+                        <strong>Vender</strong>
+                    <img src="../View/template/img/seta.png" alt=""> Efetue a Venda</p>
+                </div>
+                <br>
+                <div id="men_left2">
+                  <h2>Identificação</h2></div>
+                <div id="men_right2">
+                  <h2>Efetuar Venda</h2></div>
+                <div id="geral">
+                    <div id="{corAlerta}">
+                       {imagemAlerta}{menssagemAlerta}
+              </div>
+                    <form action="" method="post" id="cad_parte2">
+                        <h2>Cliente: {nomeCliente}</h2>
+                        <label for="ValorCompra">Valor da Compra: R$</label>
+                         <input type="text" name="valorCompra" id="ValorCompra" size="20" onClick="formulario('valorCompra','erroValorCompra');" onKeyPress="reais(this,event)" onKeyDown="backspace(this,event)" value="{valorCompra}"><br>
+                        <label for="NCaixa">Numero do Caixa:</label>
+                        <input type="text" name="pcVendas" id="NCaixa" size="8"><br>
+                        <label for="DataVencimento">Data do Vencimento:</label>
+                        <input type="text" name="DataVencimento" id="DataVencimento" size="8" value="{dataVencimentoPagamento}" onKeyUp="Mascara('DATA',this,event);" onKeyPress="return digitos(event, this);" maxlength="10" disabled><br>
+                        <label for="Limite">Limite:</label>
+                        <span class="amarelo">R$ {limitePagamento}</span><br>
+                        <label for="Disponivel">Disponível:</label>
+                        <span  class="{corValorDisponivel}">R$ {valorDisponivel}</span><br>
+                        <br>
+                        <hr>
+                        <br>
+                        <center>
+                        <input type="submit" name="finalizar" value="Finalizar" class="inputBotao" id="finalizar"/>
+                      <input type="submit" name="voltar" value="Voltar" class="inputBotao" />
+                    	</center>
+                    </form>
+                    
+                    <br style="clear:both;">
+                    <br style="clear:both;">
+                </div>
+            </div>
+        </div>
+        <div id="rodape">Copyright © FixaSolucoes.com.br . Todos os direitos reservados</div>
+    </body>
+</html>
